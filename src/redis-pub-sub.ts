@@ -13,7 +13,7 @@ export class RedisPubSub<T> implements GenericPubSub<T> {
       if (!this.callbacks.has(redisChannelId)) {
         return;
       }
-      const allCallbacks = this.callbacks.get(redisChannelId);
+      const allCallbacks = this.callbacks.get(redisChannelId) || [];
       const parsedPayload = JSON.parse(message) as T;
       for (const callback of allCallbacks) {
         callback(parsedPayload);
@@ -29,7 +29,7 @@ export class RedisPubSub<T> implements GenericPubSub<T> {
     if (!this.callbacks.has(channelId)) {
       this.callbacks.set(channelId, []);
     }
-    this.callbacks.get(channelId).push(callback);
+    this.callbacks.get(channelId)!.push(callback);
     this.subClient.subscribe(channelId);
   }
 

@@ -1,4 +1,18 @@
-Usage:
+# @boardgame.io/redis-pubsub
+This package provides a Redis pub/sub adapter for [boardgame.io](https://boardgame.io/).
+
+## Installation
+
+```sh
+npm install @boardgame.io/redis-pubsub
+```
+
+## Requirements
+
+Requires `redis` npm library `3.1.2` or greater, and `boardgame.io` version `0.47.0` or greater. 
+Using a database adaptor (i.e. postgres) that stores and shares the state across servers is also required to properly horizontally scale them.
+
+## Usage
 
 ```
 import { RedisPubSub } from 'bgio-redis-pubsub'

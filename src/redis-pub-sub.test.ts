@@ -4,8 +4,8 @@ import { RedisPubSub } from './redis-pub-sub';
 const CHANNEL_FOO = 'MATCH-foo';
 
 describe('redis pub-sub', () => {
-  let pubClientMock;
-  let subClientMock;
+  let pubClientMock: any;
+  let subClientMock: any;
   let pubSub: RedisPubSub<string>;
 
   beforeEach(() => {

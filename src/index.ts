@@ -1,3 +1,1 @@
-import { RedisPubSub as redis } from "./redis-pub-sub";
-
-export const RedisPubSub = redis;
+export { RedisPubSub } from "./redis-pub-sub";

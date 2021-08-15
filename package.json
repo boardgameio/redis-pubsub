@@ -1,28 +1,40 @@
 {
-  "name": "bgio-redis-pubsub",
+  "name": "@boardgame.io/redis-pubsub",
   "version": "0.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "description": "Redis pub/sub adapter for boardgame.io",
   "scripts": {
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
     "build": "tsc",
     "test": "jest",
     "fix": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json"    
+    "lint": "tslint -p tsconfig.json"
   },
   "jest": {
     "testMatch": [
       "<rootDir>/src/**/*.test.ts"
     ]
   },
+  "funding": [
+    "https://github.com/boardgameio/boardgame.io?sponsor=1",
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/boardgameio"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/boardgameio/bgio-redis-pubsub.git"
   },
-  "files": ["lib/**/*"], 
-  "keywords": ["boardgame.io", "redis"],
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "boardgame.io",
+    "redis"
+  ],
   "author": "",
   "license": "MIT",
   "bugs": {
@@ -41,11 +53,12 @@
     "ts-mockito": "^2.6.1",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.3.5"
-  },
-  "dependencies": {
+    "typescript": "^4.3.5",
     "@types/koa-router": "^7.4.4",
-    "boardgame.io": "^0.47.0",
-    "redis": "^3.1.2"
+    "boardgame.io": "^0.47.0"
+  },
+  "peerDependencies": {
+    "boardgame.io": ">=0.47.0",
+    "redis": ">=3.1.2"
   }
 }
