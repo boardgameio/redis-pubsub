@@ -9,7 +9,7 @@ npm install @boardgame.io/redis-pubsub
 
 ## Requirements
 
-Requires `redis` npm library `3.1.2` or greater, and `boardgame.io` version `0.47.0` or greater. 
+Requires `redis` npm library `3.1.2` or greater ([docs](https://github.com/NodeRedis/node-redis)), and `boardgame.io` version `0.47.0` or greater ([docs](https://boardgame.io)). 
 Using a database adaptor (i.e. postgres) that stores and shares the state across servers is also required to properly horizontally scale them.
 
 ## Usage
