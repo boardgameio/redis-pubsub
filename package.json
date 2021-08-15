@@ -27,7 +27,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/boardgameio/bgio-redis-pubsub.git"
+    "url": "git+https://github.com/boardgameio/redis-pubsub.git"
   },
   "files": [
     "lib/**/*"
@@ -39,9 +39,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/boardgameio/bgio-redis-pubsub/issues"
+    "url": "https://github.com/boardgameio/redis-pubsub/issues"
   },
-  "homepage": "https://github.com/boardgameio/bgio-redis-pubsub#readme",
+  "homepage": "https://github.com/boardgameio/redis-pubsub#readme",
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
