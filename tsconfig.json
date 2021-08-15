@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "declaration": true,
+      "outDir": "./lib",
+      "strict": false ,
+      "allowSyntheticDefaultImports": true      
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "**/__tests__/*"]
+  }
