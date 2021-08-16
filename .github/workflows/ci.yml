@@ -17,18 +17,32 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    strategy:
+      matrix:
+        node: [10.x, 12.x, 14.x, 16.x]
+        # Test with oldest and newest supported boardgame.io versions
+        bgio: [0.47.0, latest]
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checks-out repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Install
-        run: cd $GITHUB_WORKSPACE && npm install
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}      
 
-      # Runs a set of commands using the runners shell
+      - name: Install project
+        run: cd $GITHUB_WORKSPACE && npm ci
+
+      - name: Install boardgame.io@${{ matrix.bgio }}
+        run: npm i -D boardgame.io@${{ matrix.bgio }}
+
+      - name: Lint
+        run: npm run lint
+
       - name: Test
-        run: npm run lint && npm run test
+        run: npm run test
