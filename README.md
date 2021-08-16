@@ -24,7 +24,7 @@ Using a database adapter that stores and shares the state across servers is also
 
 ```js
 import redis from 'redis';
-import { RedisPubSub } from 'bgio-redis-pubsub'
+import { RedisPubSub } from '@boardgame.io/redis-pubsub'
 import { Server, Origins, SocketIO } from 'boardgame.io/server';
 import { PostgresStore } from 'bgio-postgres';
 import MyGame from './src/MyGame';
